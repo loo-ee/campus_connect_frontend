@@ -58,7 +58,7 @@ export default function TaskPage() {
   return (
     <div className="flex flex-col items-center">
       <span className="text-2xl mt-5">Task Details</span>
-      <div className="flex flex-row items-center mt-1 w-full justify-between px-5">
+      <div className="flex flex-row items-center mt-1 w-full justify-between border-2 border-green-50 px-5">
         <div className="flex flex-row items-center">
           <div className="float-left z-10">
             <CustomProfilePic imgSrc="/images/pfp.jpg" />
@@ -72,7 +72,7 @@ export default function TaskPage() {
           </div>
         </div>
 
-        <div className="mr-10">
+        <div className="">
           {studentTask?.is_completed ? (
             <div className="bg-accent2 p-3 max-w-max rounded-lg border-2 border-black hover:cursor-not-allowed">
               <span className="">Work Submitted</span>

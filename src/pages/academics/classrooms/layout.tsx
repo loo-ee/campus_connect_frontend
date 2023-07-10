@@ -1,11 +1,8 @@
-import { useContext, useEffect, useState } from "react";
-import { Outlet, useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Outlet, useParams } from "react-router-dom";
 import ClassroomsPage from "./page";
-import { AuthContext } from "../../../contexts/AuthContext";
 
 export default function ClassroomsLayout() {
-  const Auth = useContext(AuthContext);
-  const navigate = useNavigate();
   const { section } = useParams();
 
   const [isLobby, setIsLobby] = useState(true);
@@ -14,10 +11,6 @@ export default function ClassroomsLayout() {
     if (section) setIsLobby(false);
     else setIsLobby(true);
   }, [section]);
-
-  useEffect(() => {
-    if (!Auth?.user?.user) navigate("/login/");
-  }, [Auth?.user?.user]);
 
   return (
     <>

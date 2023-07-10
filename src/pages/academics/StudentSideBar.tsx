@@ -1,13 +1,17 @@
 import * as RadioGroup from "@radix-ui/react-radio-group";
+import { useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export default function StudentSideBar() {
+  const Auth = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const defaultValue = getDefaultValue();
 
   function handleRadioGroupValueChange(value: string) {
-    navigate(value);
+    if (value == "classrooms" && !Auth?.user?.user) navigate("/login/");
+    else navigate(value);
   }
 
   function getDefaultValue() {

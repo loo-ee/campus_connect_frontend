@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { openai } from "../../util/globalVars";
 
 export default function HomePage() {
@@ -13,7 +13,6 @@ export default function HomePage() {
   const promptQuestionRef = useRef<HTMLDivElement>(null);
   const promptRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
-  const location = useLocation();
 
   async function fetchResponse(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();

@@ -1,4 +1,3 @@
-import React from "react";
 import * as Avatar from "@radix-ui/react-avatar";
 
 export default function CustomProfilePic({ imgSrc }: { imgSrc: string }) {

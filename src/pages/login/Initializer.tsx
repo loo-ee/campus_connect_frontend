@@ -34,7 +34,7 @@ export default function Initializer({
     }
 
     void fetchUser();
-  }, [Auth]);
+  }, []);
 
   return <div>{children}</div>;
 }

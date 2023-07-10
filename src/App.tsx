@@ -2,8 +2,10 @@ import { Route, Routes } from "react-router-dom";
 import AcademicsLayout from "./pages/academics/layout";
 import HomeLayout from "./pages/home/layout";
 import HomePage from "./pages/home/page";
-import ClassroomsLayout from "./pages/academics/classrooms/page";
+import ClassroomsLayout from "./pages/academics/classrooms/layout";
 import Login from "./pages/login/page";
+import ClassroomLayout from "./pages/academics/classrooms/classroom/layout";
+import TaskPage from "./pages/academics/classrooms/classroom/task/page";
 
 function App() {
   return (
@@ -16,7 +18,12 @@ function App() {
         <Route path="login" element={<Login />}></Route>
 
         <Route path="academics/" element={<AcademicsLayout />}>
-          <Route path="classrooms/" element={<ClassroomsLayout />} />
+          <Route path="classrooms//*" element={<ClassroomsLayout />}>
+            <Route path=":section" element={<ClassroomLayout />}>
+              <Route path=":taskID" element={<TaskPage />} />
+            </Route>
+          </Route>
+
           <Route path="subjects/" />
           <Route path="announcements/" />
         </Route>

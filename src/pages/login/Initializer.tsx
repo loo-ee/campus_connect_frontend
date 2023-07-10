@@ -15,7 +15,7 @@ export default function Initializer({
       const foundTokens = localStorage.getItem("authTokens");
 
       if (!foundTokens) {
-        console.log("no tokensss");
+        console.log("No tokens found");
         return;
       }
 
@@ -34,7 +34,7 @@ export default function Initializer({
     }
 
     void fetchUser();
-  }, []);
+  }, [Auth]);
 
   return <div>{children}</div>;
 }

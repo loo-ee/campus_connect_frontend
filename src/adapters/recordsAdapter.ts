@@ -202,10 +202,10 @@ export async function getSectionMembers(sectionCode: string) {
   }
 }
 
-export async function getStudentTask(taskTitle: string, studentEmail: string) {
+export async function getStudentTask(taskID: number, studentEmail: string) {
   try {
     const response = await fetch(
-      `${backendURL}/records/get-student-task/?studentEmail=${studentEmail}&taskTitle=${taskTitle}`
+      `${backendURL}/records/get-student-task/?studentEmail=${studentEmail}&taskID=${taskID}`
     );
 
     if (!response.ok) return null;

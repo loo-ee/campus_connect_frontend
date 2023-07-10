@@ -94,7 +94,7 @@ export default function AuthContextProvider({
 
   async function assignUser(accessToken: string | null) {
     if (!accessToken) {
-      console.log("no tokens");
+      console.log("No tokens found");
       return;
     }
 

@@ -24,7 +24,7 @@ export default function Header() {
         </div>
       </div>
       <div className="flex flex-row w-[300px] justify-evenly">
-        <Link to="login/">
+        <Link to="/login/">
           <img src={book} width={70} height={70} alt="academics" />
         </Link>
         <Profile />

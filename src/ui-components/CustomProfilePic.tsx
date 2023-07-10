@@ -6,7 +6,7 @@ export default function CustomProfilePic({ imgSrc }: { imgSrc: string }) {
       <Avatar.Root className="bg-blackA3 inline-flex h-[65px] w-[65px] m-2 select-none items-center justify-center overflow-hidden rounded-full align-middle shadow-sm shadow-black">
         <Avatar.Image
           className="h-full w-full rounded-[inherit] object-cover"
-          src={imgSrc}
+          src={new URL(imgSrc, import.meta.url).href}
           alt="profile picture"
         />
         <Avatar.Fallback

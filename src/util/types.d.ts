@@ -90,7 +90,7 @@ export interface IToken {
 export interface ITask {
   id: number;
   section: string;
-  task_title: string;
+  title: string;
   description: string;
   deadline: Date;
   created_at: Date;

@@ -18,7 +18,7 @@ function LoginTab() {
     e.preventDefault();
 
     if (!emailInputRef.current && !passwordInputRef) {
-      console.log("Nope");
+      console.log("Please fill all fields");
       return;
     }
 
@@ -29,7 +29,6 @@ function LoginTab() {
     const data = await (response.json() as Promise<IToken>);
 
     if (response.status == 200) {
-      console.log("hey");
       const foundUser = await getUser(email);
       if (foundUser) console.log(foundUser);
 
@@ -103,7 +102,13 @@ function LoginTab() {
               type="password"
             />
           </fieldset>
-          <div className="flex justify-end mt-5">
+          <div className="flex justify-evenly mt-5">
+            <button
+              onClick={(e) => navigate("/")}
+              className="inline-flex items-center justify-center rounded px-[15px] text-[15px] leading-none font-medium h-[35px] bg-red-400 text-red-700 hover:bg-red-500 focus:shadow-[0_0_0_2px] focus:shadow-green7 outline-none cursor-default"
+            >
+              Login as Guest
+            </button>
             <button
               onClick={(e) => {
                 void loginHandler(e);

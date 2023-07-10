@@ -27,7 +27,7 @@ export default function AcademicsLayout() {
           </div>
         </div>
 
-        <div className="w-[700px] bg-secondary rounded-lg p-4">
+        <div className="w-[700px] flex flex-col bg-secondary rounded-lg p-4">
           <Outlet />
         </div>
       </div>
